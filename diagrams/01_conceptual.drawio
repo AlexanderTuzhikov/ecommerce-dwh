@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="01_conceptual" id="0">
+    <mxGraphModel dx="1414" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1060" pageHeight="360" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AWT-nQ2xx7qlzYxnkw94-1" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="320" width="710" x="175" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zakaz" parent="AWT-nQ2xx7qlzYxnkw94-1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Заказ&lt;/b&gt;&lt;br&gt;" vertex="1">
+          <mxGeometry height="60" width="150" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tovar" parent="AWT-nQ2xx7qlzYxnkw94-1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Товар&lt;/b&gt;&lt;br&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="280" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="kateg" parent="AWT-nQ2xx7qlzYxnkw94-1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Категория товара&lt;/b&gt;&lt;br&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="560" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="status" parent="AWT-nQ2xx7qlzYxnkw94-1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Статус заказа&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="150" as="geometry" />
+        </mxCell>
+        <mxCell id="kanal" parent="AWT-nQ2xx7qlzYxnkw94-1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Канал продаж&lt;/b&gt;&lt;br&gt;" vertex="1">
+          <mxGeometry height="60" width="150" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="AWT-nQ2xx7qlzYxnkw94-1" source="zakaz" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="tovar" value="содержит">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="AWT-nQ2xx7qlzYxnkw94-1" source="tovar" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="kateg" value="относится к">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="AWT-nQ2xx7qlzYxnkw94-1" source="zakaz" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="status" value="имеет">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="AWT-nQ2xx7qlzYxnkw94-1" source="zakaz" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="kanal" value="оформлен через">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,73 @@
+@page {
+    size: A4;
+    margin: 15mm 12mm;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.4;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+    page-break-inside: auto;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+th,
+td {
+    padding: 4px 5px;
+    border: 1px solid #999;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+}
+
+/* Изображения */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Центрирование изображений в Markdown */
+p:has(> img) {
+    text-align: center;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Диаграмма вместе с подписью */
+figure {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+figcaption {
+    page-break-before: avoid;
+    break-before: avoid;
+}
+
+/* Заголовки не должны оставаться внизу страницы */
+h1,
+h2,
+h3,
+h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+}

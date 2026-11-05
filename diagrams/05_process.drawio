@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="05_process" id="0">
+    <mxGraphModel dx="1520" dy="808" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1560" pageHeight="480" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;1. Загрузка&lt;/b&gt;&lt;br&gt;CSV-файлы → raw&lt;br&gt;(Hadoop)" vertex="1">
+          <mxGeometry height="100" width="190" x="30" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;2. Очистка&lt;/b&gt;&lt;br&gt;типы, дубли, флаги dq_*&lt;br&gt;(Hadoop, staging)" vertex="1">
+          <mxGeometry height="100" width="190" x="270" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;3. Нормализация&lt;/b&gt;&lt;br&gt;6 таблиц DDS&lt;br&gt;(Greenplum)&lt;br&gt;" vertex="1">
+          <mxGeometry height="100" width="190" x="510" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pd" parent="1" style="rhombus;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Сумма позиций =&lt;/b&gt;&lt;br&gt;сумме заказа?&lt;br&gt;" vertex="1">
+          <mxGeometry height="130" width="230" x="750" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="pfix" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Пересчёт&lt;/b&gt;&lt;br&gt;net_sales_alloc,&lt;br&gt;profit_alloc&lt;br&gt;" vertex="1">
+          <mxGeometry height="100" width="190" x="770" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;4. Агрегация&lt;/b&gt;&lt;br&gt;только Completed&lt;br&gt;день × категория × канал&lt;br&gt;(ClickHouse)&lt;br&gt;" vertex="1">
+          <mxGeometry height="100" width="220" x="1030" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;5. Использование&lt;/b&gt;&lt;br&gt;дашборд, SQL-запросы&lt;br&gt;(BI)&lt;br&gt;" vertex="1">
+          <mxGeometry height="100" width="210" x="1300" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="p1" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="p2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="p2" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="p3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="p3" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="pd" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="pd" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="p4" value="да">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="pd" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="pfix" value="нет">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="pfix" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="p4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="p4" style="html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="p5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
